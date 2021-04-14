@@ -357,7 +357,7 @@ function cleanChars($str) {
 	$strNew = '';
 	foreach ($arrStr as $strChr) {
 		$intChr = ord($strChr);
-		if ($intChr == 163) { $strNew .= $strChr; continue; } //Keep £
+		if ($intChr == 163) { $strNew .= $strChr; continue; } //Keep ï¿½
 		if ($intChr > 31 && $intChr < 127) {
 			$strNew .= $strChr;
 		}
@@ -367,7 +367,7 @@ function cleanChars($str) {
 
 
 /* Send Mail Functions */
-function mailSend($arrPost, $strFromName = '', $strFrom, $strToName, $strTo, $strCC = '', $strBCC = '', $strReply = '', $strReturn = '',
+function mailSend($arrPost, $strFromName = '', $strFrom = '', $strToName = '', $strTo = '', $strCC = '', $strBCC = '', $strReply = '', $strReturn = '',
 	              $strSubject = '', $strTitle = '', $strMessage = '', $strLogo = '', $strCSS = '', $strBody = '', $strFormat = 'HTML', $strPriority = '',
 				  $blnShowEmpty = false, $blnReferrer = false, $blnDebug = false, $strServer = '', $strUsername = '', $strPassword = '') {
 
@@ -1289,22 +1289,22 @@ function colorLumDiff($hex1, $hex2) { // > 5 for Readability
 /* ASCII to HTML Function */
 function asciiToHTML($strInput) {
 	$arrTable = array(
-		"“" => "&quot;",
-		"”" => "&quot;",
-		"©" => "&copy;",
-		"®" => "&reg;",
-		"™" => "&trade;",
-		"°" => "&deg;",
-		"…" => "&hellip;",
-		"–" => "&ndash;",
-		"—" => "&mdash;",
-		"«" => "&laquo;",
-		"»" => "&raquo;",
-		"·" => "&middot;",
-		"•" => "&bull;",
-		"‘" => "'",
-		"’" => "'",
-		"×" => "x"
+		"ï¿½" => "&quot;",
+		"ï¿½" => "&quot;",
+		"ï¿½" => "&copy;",
+		"ï¿½" => "&reg;",
+		"ï¿½" => "&trade;",
+		"ï¿½" => "&deg;",
+		"ï¿½" => "&hellip;",
+		"ï¿½" => "&ndash;",
+		"ï¿½" => "&mdash;",
+		"ï¿½" => "&laquo;",
+		"ï¿½" => "&raquo;",
+		"ï¿½" => "&middot;",
+		"ï¿½" => "&bull;",
+		"ï¿½" => "'",
+		"ï¿½" => "'",
+		"ï¿½" => "x"
 	);
 	return strtr($strInput, $arrTable);
 }
@@ -2053,12 +2053,12 @@ function encryptDecrypt($strVal) {
 	$intKey = strlen($strKey) < 32 ? strlen($strKey) : 32;
 	$arrKey = array();
 	for ($i = 0; $i < $intKey; $i++) {
-		$arrKey[$i] = ord($strKey{$i})&0x1F;
+		$arrKey[$i] = ord($strKey[$i])&0x1F;
 	}
 	$j = 0;
 	for ($i = 0; $i < strlen($strVal); $i++) {
-		$e = ord($strVal{$i});
-		$strVal{$i} = $e&0xE0 ? chr($e^$arrKey[$j]) : chr($e);
+		$e = ord($strVal[$i]);
+		$strVal[$i] = $e&0xE0 ? chr($e^$arrKey[$j]) : chr($e);
 		$j++;
 		$j = $j == $intKey?0 : $j;
 	}
