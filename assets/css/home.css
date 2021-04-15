@@ -82,6 +82,12 @@
     padding: 17px 34px;
 }
 
+#OS{
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
 @media (max-width: 1199px) {
     #section02 .block-b .content,
     #section02 .block-c .content{

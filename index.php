@@ -97,7 +97,7 @@ include('inc_doctype.php');
                     	    <option value="Mac">Mac</option>
                         </select>
                     </div>
-                    <a id='download' href="" target="_blank" class="btn btn-orange mt-5" style='display:none;'></a>
+                    <a id='download' href="" target="_blank" class="btn btn-orange mt-5" style='display:none;text-transform:uppercase;'></a>
                     <br><br>
                     Alternate Downloads at our <a href='https://github.com/dogecash/dogecash/releases'>Github</a>
                     <script>
@@ -259,9 +259,7 @@ include('inc_doctype.php');
 								<th scope="col">BLOCK REWARD</th>
 								<th scope="col">MN 80%</th>
 								<th scope="col">POS 20%</th>
-								<th scope="col">BUDGET 10% FROM BLOCK</th>
-								<th scope="col">ROUND TIME FRAME</th>
-								<th scope="col">OVERALL TIME</th>
+								<th scope="col">COMMUNITY BUDGET</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -269,7 +267,6 @@ include('inc_doctype.php');
 								<th scope="row">PREMINE</th>
 								<td>1</td>
 								<td>1,050,000</td>
-								<td>-</td>
 								<td>-</td>
 								<td>-</td>
 								<td>-</td>
@@ -281,8 +278,6 @@ include('inc_doctype.php');
 								<td>0.8</td>
 								<td>-</td>
 								<td>-</td>
-								<td>1 DAY</td>
-								<td>1 DAY</td>
 							</tr>
 							<tr>
 								<th scope="row">PRE SALE ROUND</th>
@@ -291,8 +286,6 @@ include('inc_doctype.php');
 								<td>8</td>
 								<td>2</td>
 								<td>-</td>
-								<td>7 DAYS</td>
-								<td>8 DAYS</td>
 							</tr>
 							<tr>
 								<th scope="row">EXCHANGE LAUNCH</th>
@@ -301,59 +294,56 @@ include('inc_doctype.php');
 								<td>12.8</td>
 								<td>3.2</td>
 								<td>-</td>
-								<td>60 DAYS</td>
-								<td>68 DAYS</td>
 							</tr>
 							<tr>
-								<th scope="row">PLATFORM 1 DEV</th>
+								<th scope="row">PHASE 1</th>
 								<td>97,921 - 184,320</td>
 								<td>14</td>
 								<td>11.2</td>
 								<td>2.8</td>
 								<td>-</td>
-								<td>60 DAYS</td>
-								<td>128 DAYS</td>
 							</tr>
 							<tr>
-								<th scope="row">PLATFORM 2 DEV</th>
+								<th scope="row">PHASE 2</th>
 								<td>184,321 - 321,781</td>
 								<td>12</td>
 								<td>9.6</td>
 								<td>2.4</td>
 								<td>-</td>
-								<td>95 DAYS</td>
-								<td>223 DAYS</td>
 							</tr>
 							<tr>
-								<th scope="row">PLATFORM 1 LIVE</th>
+								<th scope="row">PHASE 3</th>
 								<td>1 - 238,620</td>
 								<td>12</td>
 								<td>8.64</td>
 								<td>2.16</td>
-								<td>1.2</td>
-								<td>165 DAYS</td>
-								<td>389 DAYS</td>
+								<td>10% from block</td>
 							</tr>
 							<tr>
-								<th scope="row">PLATFORM 2 DEV</th>
+								<th scope="row">PHASE 4</th>
 								<td>238,620 - 764,221</td>
 								<td>10</td>
 								<td>7.2</td>
 								<td>1.8</td>
-								<td>1</td>
-								<td>365 DAYS</td>
-								<td>754 DAYS</td>
+								<td>10% from block</td>
 							</tr>
 
 							<tr>
-								<th scope="row">PLATFORMS LIVE</th>
+								<th scope="row">PHASE 5</th>
 								<td>764,221 - 4,445,940</td>
 								<td>6.6</td>
 								<td>5</td>
 								<td>1</td>
-								<td>0.6</td>
-								<td>2555 DAYS</td>
-								<td>3309 DAYS</td>
+								<td>10% from block</td>
+							</tr>
+
+							<tr>
+								<th scope="row">CURRENT PHASE</th>
+								<td>764,221 - End</td>
+								<td>5.4</td>
+								<td>4.32</td>
+								<td>1.08</td>
+								<td>Static</td>
 							</tr>
 
 						</tbody>
@@ -368,7 +358,7 @@ include('inc_doctype.php');
 				<div class="col-12 text-black text-center pb-5">
 					<h2><u>DOGECASH™ FEATURES</u></h2>
 				</div>
-				<div class="col-12 grey-pattern-bg">
+				<div class="col-12">
 					<div class="items">
                         <div class="item">
                             <div class="row align-items-center">
@@ -436,45 +426,13 @@ include('inc_doctype.php');
 		</div>
 	</div>
 </div>
-<!-- Section 05 -->
-<div id="whitepaper">
-	<div id="section06" class="container-fluid">
-		<div id="block-a" class="container-fluid">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-md-6 text-center text-md-left mb-5 mb-md-0" data-aos="fade-right">
-						<h3 class="text-black">WHITEPAPER</h3>
-						<p class="mt-5 text-black">We won't be insulting by telling you what a masternode is. Instead, read for a quick rundown of what our project is all about!</p>
-						<p class="mt-5 mb-xl-5"><a class="btn btn-dark" href="http://whitepaper.dogec.io" target="_blank">DOWNLOAD <span class="text-orange">WHITEPAPER</span></a></p>
-					</div>
-					<div class="col-md-6 p-0 p-md-5">
-						<img src="assets/images/section04-image.png" class="img-fluid d-md-none">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 
 <!-- Section 06 -->
 <div id="section07" class="container-fluid">&nbsp;</div>
 
 <!-- Section 07 -->
 <div id="section08">
-	<div id="block-a" class="container-fluid">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-md-6 order-12 order-md-1" data-aos="fade-right"><img src="assets/images/section06-image.png" class="img-fluid"></div>
-				<div class="col-md-6 order-1 order-md-12 text-center text-md-left" data-aos="fade-left">
-					<h3 class="text-cream">MASTERNODE SETUP GUIDES</h3>
-					<p class="mt-5">Instructions on how to setup DogeCash in masternode configuration with wallet integration.</p>
-					<p class="mt-5 mb-5">
-						<a href="https://mnguide.dogec.io/" class="btn btn-cream">COLD WALLET MASTERNODE GUIDE</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div id="block-a" class="container-fluid"></div>
 	<div id="roadmap" class="">
 		<div class="row mb-5">
 			<div class="col-12">
@@ -484,53 +442,37 @@ include('inc_doctype.php');
 		<div class="" id="roadmap-content" data-aos="zoom-in-up">
 			<div class="container">
 				<div class="row">
-				<div class="col">
-					<div class="badge">Q4 2018</div>
-					<ul>
-						<li class="active">Mainnet Launch</li>
-						<li class="active">Governance UI Development</li>
-						<li class="active">Platform Vote #1</li>
-						<li class="active">Two Exchange Listings</li>
-					</ul>
-				  </div>
-				  <div class="col">
-						<div class="badge">2019</div>
+					<div class="col">
+						<div class="badge">Q1 2021</div>
 						<ul>
-							<li class="active">CoinMarketCap Listing</li>
-							<li class="active">Advertising Campaign</li>
-							<li class="active">Website Redesign</li>
-							<li class="active">Bounty Program Release</li>
-							<li class="active">Core Wallet Revamp</li>
-							<li class="active">SignalHub Platform #1 Development</li>
-							<li class="active">Prodoge Partnership</li>
-							<li class="active">Charity Vote and Donation #1</li>
-							<li class="active">Ecosystem and Platform Promotion</li>
-							<li class="active">HD Wallet Integration</li>
+						<li class="active">SSSolutions Partnership</li>
+						<li class="active">Networking</li>
+						<li class="active">DogeCash labs Alpha</li>
 						</ul>
 					</div>
 					<div class="col">
-						<div class="badge">2020</div>
+						<div class="badge">Q2 2021</div>
 						<ul>
-						<li class="active">Ecosystem and Platform Promotion</li>
-						<li class="active">Open source web wallet creation</li>
+						<li>DogeCash NFTs</li>
+						<li>New Whitepaper</li>
+						<li>DogeCash Labs Beta</li>
+						<li>New website</li>
+						<li>Help resources</li>
 						</ul>
 					</div>
-
 					<div class="col">
-						<div class="badge">2021</div>
+						<div class="badge">Q3 2021</div>
 						<ul>
-						<li class="">Additional Exchange Listing</li>
-						<li class="">Creating partnerships</li>
-						<li class="">Networking</li>
+						<li>Ease of acquisition program</li>
+						<li>DogeCash Wallet Design + Explorer Update</li>
+						<li>New DogeCash Core Update</li>
 						</ul>
 					</div>
-
 					<div class="col">
-						<div class="badge">2022</div>
+						<div class="badge">Q4 2021</div>
 						<ul>
-						<li class="">Beta Donation Program</li>
-						<li class="">Continue Ecosystem</li>
-						<li class="">Platform Promotion</li>
+						<li>Legal incorporation</li>
+						<li>Additional Exchange Listing</li>
 						</ul>
 					</div>
 				</div>

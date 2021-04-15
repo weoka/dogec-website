@@ -34,9 +34,6 @@
                         <a class="nav-link" href="https://explorer.dogec.io/" target="_blank">explorer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://whitepaper.dogec.io/" target="_blank">whitepaper</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="https://blog.dogec.io/" target="_blank">blog</a>
                     </li>
                     <li class="nav-item">
