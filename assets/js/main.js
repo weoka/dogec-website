@@ -120,3 +120,56 @@ $(document).ready(function(){
     
     AOS.init();
 });
+
+//SHOW PROPER WALLET VERSION
+var OS;
+var bit = '64';
+
+function getOS() {
+    let userAgent = window.navigator.userAgent,
+        platform = window.navigator.platform,
+        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+        iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+        os = null;
+
+    if (macosPlatforms.indexOf(platform) !== -1) {
+        os = 'Mac OS';
+    } else if (iosPlatforms.indexOf(platform) !== -1) {
+        os = 'iOS';
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+        os = 'Windows';
+    } else if (/Android/.test(userAgent)) {
+        os = 'Android';
+    } else if (!os && /Linux/.test(platform)) {
+        os = 'Linux';
+    }
+
+    return os;
+}
+
+async function showVersion(){
+    const request = await fetch('https://api.github.com/repos/dogecash/dogecash/releases/latest');
+    const content = await request.json();
+    const lastVersion = (content['tag_name']).replace('v','');
+    const OS = getOS();
+
+    if(OS =='Windows'){
+        var Download = document.getElementById('download');
+        $("#download").fadeIn();
+        Download.setAttribute('href', `https://github.com/dogecash/dogecash/releases/download/v${lastVersion}/DogeCash-${lastVersion}-win64-setup-unsigned.exe`);
+        Download.innerHTML = OS + ' ' + ' Wallet Download';
+    }else if(OS =='Linux'){
+        var Download = document.getElementById('download');
+        Download.setAttribute('href', `https://github.com/dogecash/dogecash/releases/download/v${lastVersion}/DogeCash-${lastVersion}-x86_64-linux-gnu.tar.gz`);
+        Download.innerHTML = OS + ' ' + ' Wallet Download';
+        $("#download").fadeIn();
+    }else if(OS =='Mac OS'){
+        var Download = document.getElementById('download');
+        Download.setAttribute('href', `https://github.com/dogecash/dogecash/releases/download/v${lastVersion}/DogeCash-${lastVersion}-osx-unsigned.dmg`);
+        Download.innerHTML = OS + ' ' + ' Wallet Download';
+        $("#download").fadeIn();
+    }
+}
+
+showVersion();

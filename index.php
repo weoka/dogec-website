@@ -81,79 +81,20 @@ include('inc_doctype.php');
     </div>
     <!-- Block B -->
     <div class="block-b row align-items-center">
-        <div class="col-md-6 order-12 order-md-1" data-aos="fade-right">
+        <div class="col-md-6 order-12 order-md-1" data-aos="fade-right" style="padding: 50px;">
             <div class="content">
 	            <div  id="wallets">
                     <h2>A GREAT COIN DESERVES A <span class="text-orange">GREAT WALLET</span></h2>
                     <p class="mt-5">At DogeCash™ we focus on the small details. We have designed a wallet that its not only rock-solid in terms of stability but it is beautiful in every aspect of its UI. Now available for Download.</p>
-                    <div id='OsDiv'>
-                        <label for="OS">Select your operating system:</label>
-                        <br>
-                        <select id="OS" name="OS" onchange="OsSelect()">
-                            <option value="SelectOS">Select Operating system</option>
-                            <option value="Windows">Windows</option>
-                            <option value="ARM">ARM</option>
-                    	    <option value="Linux">Linux</option>
-                    	    <option value="Mac">Mac</option>
-                        </select>
-                    </div>
-                    <a id='download' href="" target="_blank" class="btn btn-orange mt-5" style='display:none;text-transform:uppercase;'></a>
-                    <br><br>
-                    Alternate Downloads at our <a href='https://github.com/dogecash/dogecash/releases'>Github</a>
-                    <script>
-                        var OS;
-                        var bit = '64';
-                        function OsSelect(){
-                        	valsys = document.getElementById("OS").value;
-                            if(valsys != 'SelectOS'){
-                    			OS = valsys; 	
-                                Download();
-                            }
-                        }
-                        <?php
-                        //Send a Get request to github and find the latest download version.
-                        $url = "https://api.github.com/repos/dogecash/dogecash/releases/latest";
-                        $ch = curl_init();
-                        curl_setopt($ch, CURLOPT_URL, $url);
-                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                        curl_setopt( $ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0" );
-                        $response = curl_exec($ch);
-                        curl_close($ch);
-                         
-                         
-                         
-                        //If $contents is not a boolean FALSE value.
-                        if($response !== false){
-                            //var_dump($response);
-                            $response = json_decode($response, true);
-                            $version = $response['tag_name'];
-                            $versionWithoutV = substr($version, 1);
-                        }
-                        ?>
-                        function Download(){
-                    		if(OS =='Windows'){
-                                var Download = document.getElementById('download');
-                                $("#download").fadeIn();
-                                Download.setAttribute('href', 'https://github.com/dogecash/dogecash/releases/download/<?php echo $version;?>/DogeCash-<?php echo $versionWithoutV;?>-win64-setup-unsigned.exe');
-                                Download.innerHTML = OS + ' ' + ' Wallet Download';
-                            }else if(OS =='Linux'){
-                                var Download = document.getElementById('download');
-                                Download.setAttribute('href', 'https://github.com/dogecash/dogecash/releases/download/<?php echo $version;?>/DogeCash-<?php echo $versionWithoutV;?>-x86_64-linux-gnu.tar.gz');
-                                Download.innerHTML = OS + ' ' + ' Wallet Download';
-                                $("#download").fadeIn();
-                            }else if(OS =='Mac'){
-                              var Download = document.getElementById('download');
-                              Download.setAttribute('href', 'https://github.com/dogecash/dogecash/releases/download/<?php echo $version;?>/DogeCash-<?php echo $versionWithoutV;?>-osx-unsigned.dmg');
-                              Download.innerHTML = OS + ' ' + ' Wallet Download';
-                              $("#download").fadeIn();
-                            }else if(OS =='ARM'){
-                              var Download = document.getElementById('download');
-                              Download.setAttribute('href', 'https://github.com/dogecash/dogecash/releases/download/<?php echo $version;?>/DogeCash-<?php echo $versionWithoutV;?>-arm-linux-gnueabihf.tar.gz');
-                              Download.innerHTML = OS + ' ' + ' Wallet Download';
-                              $("#download").fadeIn();
-                            }
-                        }
-                    </script>
+                    <div class="download-buttons">
+						<a id='download' href="" target="_blank" class="btn btn-orange" style='display:none;text-transform:uppercase;'></a>
+						<a href="https://apps.apple.com/us/app/flits/id1460563713?l=nl&ls=1" target="_blank"><img style="height:52px;" src="assets/images/iOS-download.svg" alt=""></a>
+						<a href="https://play.google.com/store/apps/details?id=app.flitsnode.flits" target="_blank"><img style="height:52px;" src="assets/images/google-download.png" alt=""></a>
+					</div>
+					<br><br>
+                    Wallet bootstrap available <a href='https://www.dropbox.com/s/s4vy92sczk9c10s/blocks_n_chains.tar.gz?dl=1' target="_blank">here</a>
+					<br><br>
+                    Alternate Downloads at our <a href='https://github.com/dogecash/dogecash/releases' target="_blank">Github</a>
 	            </div>
             </div>
         </div>
